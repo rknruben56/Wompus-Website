@@ -1,0 +1,68 @@
+﻿@model PagedList.IPagedList<Wompus_Website.Models.News>
+@using PagedList.Mvc;
+    <title>@ViewBag.Title = "News"</title>
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+    <style>
+        .news-wrapper {
+            float: left;
+            width: 700px;
+            padding-top: 10px;
+        }
+
+        .news-content {
+            background-color: #000;
+            float: left;
+            margin: 0 0 20px;
+            padding: 20px 20px 0;
+            width: 660px;
+        }
+
+        .description {
+            color: white;
+        }
+
+        .publish-time {
+            color: white;
+            font-size: .8em;
+        }
+
+        .pagination-wrapper {
+            padding-top: 15px;
+        }
+
+        .create-link-wrapper {
+            padding-top: 15px;
+        }
+    </style>
+<h2>Updates</h2>
+
+<div class="news-wrapper">
+    @foreach (var item in Model)
+    {
+        <div class="news-content">
+            <h3>
+                @Html.DisplayFor(modelItem => item.Title)
+            </h3>
+            <p class="description">
+                @Html.DisplayFor(modelItem => item.Description)
+            </p>
+            <p class="publish-time">
+                @Html.DisplayFor(modelItem => item.PublishTime)
+            </p>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </p>
+        </div>
+    }
+</div>
+<div class="pagination-wrapper">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>
+
+<div class="create-link-wrapper">
+    @Html.ActionLink("Create New", "Create")
+</div>

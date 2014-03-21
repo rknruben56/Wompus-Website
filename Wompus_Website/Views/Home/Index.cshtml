@@ -1,0 +1,38 @@
+﻿<head>
+    <title>@ViewBag.Title = "Home Page"</title>
+    @Styles.Render("~/Content/css")
+</head>
+<div class="container">
+    <div id="slides">
+        <img src="Content/Pictures/AbbeyPub_1.jpg" alt="Oops_1">
+        <img src="Content/Pictures/St_Louis_1.jpg" alt="Oops_2">
+        <img src="Content/Pictures/St_Louis_2.jpg" alt="Oops_3">
+        <img src="Content/Pictures/St_Louis_3.jpg" alt="Oops_4">
+    </div>
+</div>
+<h3>Stuff will go here I promise!</h3>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="Scripts/jquery.slides.min.js"></script>
+<script>
+    $(function () {
+        $('#slides').slidesjs({
+            width: 940,
+            height: 400,
+            pagination: false,
+            navigation: false,
+            play: {
+                active: false,
+                auto: true,
+                interval: 4000,
+                swap: true
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
