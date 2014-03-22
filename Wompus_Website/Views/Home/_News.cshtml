@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Wompus_Website.Models.News>
+
+<style>
+    .news-wrapper {
+        float: left;
+        max-width: 450px;
+        padding-top: 10px;
+    }
+
+    .news-content {
+        background-color: #000;
+        margin: 0 0 20px;
+        padding: 20px 20px 0;
+        width: 660px;
+    }
+
+    .description {
+        color: white;
+    }
+
+    .publish-time {
+        color: white;
+        font-size: .8em;
+    }
+
+    .pagination-wrapper {
+        padding-top: 15px;
+        position: relative;
+    }
+
+    .create-link-wrapper {
+        padding-top: 15px;
+        position: relative;
+    }
+</style>
+@if (Model != null)
+{
+    <div class="news-wrapper">
+        <h2>News</h2>
+
+        @foreach (var item in Model)
+        {
+            <div class="news-content">
+                <h3>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </h3>
+                <p class="description">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </p>
+                <p class="publish-time">
+                    @Html.DisplayFor(modelItem => item.PublishTime)
+                </p>
+            </div>
+        }
+    </div>   
+}

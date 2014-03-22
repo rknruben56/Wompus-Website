@@ -1,7 +1,10 @@
-﻿<head>
-    <title>@ViewBag.Title = "Home Page"</title>
-    @Styles.Render("~/Content/css")
-</head>
+﻿@model IEnumerable<Wompus_Website.Models.News>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@Styles.Render("~/Content/css")
+
 <div class="container">
     <div id="slides">
         <img src="Content/Pictures/AbbeyPub_1.jpg" alt="Oops_1">
@@ -10,7 +13,9 @@
         <img src="Content/Pictures/St_Louis_3.jpg" alt="Oops_4">
     </div>
 </div>
-<h3>Stuff will go here I promise!</h3>
+@Html.Action("_News")
+
+@Html.Action("_Music")
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="Scripts/jquery.slides.min.js"></script>
 <script>

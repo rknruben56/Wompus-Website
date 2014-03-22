@@ -31,13 +31,21 @@ namespace Wompus_Website.Controllers
         //
         // GET: /News/Details/5
 
-        public ActionResult Details(int id = 0)
+        public ActionResult Details(int id, string slug)
         {
+            
             News news = db.Updates.Find(id);
             if (news == null)
             {
                 return HttpNotFound();
             }
+
+            if (string.IsNullOrWhiteSpace(slug))
+            {
+                slug = news.Title;
+                return RedirectToRoute("News", new { id = id, slug = slug });
+            }
+
             return View(news);
         }
 

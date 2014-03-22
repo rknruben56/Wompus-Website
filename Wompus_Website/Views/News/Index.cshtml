@@ -1,6 +1,9 @@
 ﻿@model PagedList.IPagedList<Wompus_Website.Models.News>
 @using PagedList.Mvc;
-    <title>@ViewBag.Title = "News"</title>
+
+    @{
+        ViewBag.Title = "News";
+    }
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
     <style>
         .news-wrapper {
@@ -28,10 +31,12 @@
 
         .pagination-wrapper {
             padding-top: 15px;
+            position: relative;
         }
 
         .create-link-wrapper {
             padding-top: 15px;
+            position: relative;
         }
     </style>
 <h2>Updates</h2>

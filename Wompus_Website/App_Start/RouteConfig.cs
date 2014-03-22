@@ -13,6 +13,20 @@ namespace Wompus_Website
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //News Route
+            routes.MapRoute(
+                name: "News",
+                url: "News/{id}/{slug}",
+                defaults: new { controller = "NewsController", action = "Details", slug = UrlParameter.Optional },
+                constraints: new { id = @"\d+" });
+
+            //Shows Route
+            routes.MapRoute(
+                name: "Shows",
+                url: "Shows/{id}/{slug}",
+                defaults: new { controller = "ShowsController", action = "Details", slug = UrlParameter.Optional },
+                constraints: new { id = @"\d+" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
