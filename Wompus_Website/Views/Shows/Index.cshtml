@@ -47,11 +47,16 @@
             <p class="description">
                 @Html.DisplayFor(modelItem => item.Description)
             </p>
-            <p>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </p>
+            @{
+                if (WebSecurity.IsAuthenticated)
+                {
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </p>
+                }
+}
         </div>
     }
 </div>
@@ -61,6 +66,11 @@
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 </div>
 
-<div class="create-link-wrapper">
-    @Html.ActionLink("Create New", "Create")
-</div>
+@{
+    if (WebSecurity.IsAuthenticated)
+    {
+        <div class="create-link-wrapper">
+            @Html.ActionLink("Create New", "Create")
+        </div>
+    }
+}

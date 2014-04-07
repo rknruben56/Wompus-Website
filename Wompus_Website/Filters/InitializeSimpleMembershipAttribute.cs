@@ -38,7 +38,18 @@ namespace Wompus_Website.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    //Initialize Connection
+                    if (!WebSecurity.Initialized)
+                    {
+                        WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    }
+
+                    //Create Band user(s)
+                    //if (!WebSecurity.ConfirmAccount("rrog6"))
+                    //{
+                    //    WebSecurity.CreateUserAndAccount("rrog6", "MikeAdams69");
+                    //}
+                    
                 }
                 catch (Exception ex)
                 {

@@ -13,6 +13,9 @@
             <div id="page">
                 <p class="site-title">@Html.ActionLink("wompus", "Index", "Home")</p>
             </div>
+            <section id="login">
+                @Html.Partial("_LoginPartial")
+            </section>
             <nav>
                 <ul id="menu">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -22,6 +25,7 @@
                     <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
                 </ul>
             </nav>
+        
         </div>
         <div class="body">
             <section class="content-wrapper clear-fix">
@@ -31,7 +35,7 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - Wompus</p>
+                    <p>&copy; @DateTime.Now.Year - @Html.ActionLink("Wompus", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink"})</p>
                 </div>
             </div>
         </footer>
