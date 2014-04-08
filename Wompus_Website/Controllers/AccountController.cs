@@ -60,7 +60,7 @@ namespace Wompus_Website.Controllers
         //
         // GET: /Account/Register
 
-        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult Register()
         {
             return View();
