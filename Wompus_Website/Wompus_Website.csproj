@@ -197,6 +197,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404181854150_InitialCreate.cs" />
+    <Compile Include="Migrations\201404181854150_InitialCreate.Designer.cs">
+      <DependentUpon>201404181854150_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ConfigurationUserContext.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Show.cs" />
@@ -260,6 +265,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\wompustheband.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\btns-next-prev.png" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -340,6 +346,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201404181854150_InitialCreate.resx">
+      <DependentUpon>201404181854150_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

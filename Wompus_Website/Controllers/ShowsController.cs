@@ -30,7 +30,7 @@ namespace Wompus_Website.Controllers
 
         //
         // GET: /Shows/Details/5
-
+         [Authorize(Roles = "admin")]
         public ActionResult Details(int id = 0)
         {
             Show show = db.Shows.Find(id);
@@ -43,7 +43,7 @@ namespace Wompus_Website.Controllers
 
         //
         // GET: /Shows/Create
-
+         [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
@@ -68,7 +68,7 @@ namespace Wompus_Website.Controllers
 
         //
         // GET: /Shows/Edit/5
-
+         [Authorize(Roles = "admin")]
         public ActionResult Edit(int id = 0)
         {
             Show show = db.Shows.Find(id);
@@ -97,7 +97,7 @@ namespace Wompus_Website.Controllers
 
         //
         // GET: /Shows/Delete/5
-
+         [Authorize(Roles = "admin")]
         public ActionResult Delete(int id = 0)
         {
             Show show = db.Shows.Find(id);

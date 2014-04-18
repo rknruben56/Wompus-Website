@@ -30,8 +30,8 @@ namespace Wompus_Website.Controllers
 
         //
         // GET: /News/Details/5
-
-        public ActionResult Details(int id, string slug)
+         [Authorize(Roles = "admin")]
+        public ActionResult Details(int id = 0)
         {
             
             News news = db.Updates.Find(id);
@@ -39,19 +39,13 @@ namespace Wompus_Website.Controllers
             {
                 return HttpNotFound();
             }
-
-            if (string.IsNullOrWhiteSpace(slug))
-            {
-                slug = news.Title;
-                return RedirectToRoute("News", new { id = id, slug = slug });
-            }
-
             return View(news);
         }
 
+
         //
         // GET: /News/Create
-
+        [Authorize(Roles="admin")]
         public ActionResult Create()
         {
             return View();
@@ -78,7 +72,7 @@ namespace Wompus_Website.Controllers
 
         //
         // GET: /News/Edit/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int id = 0)
         {
             News news = db.Updates.Find(id);
@@ -107,7 +101,7 @@ namespace Wompus_Website.Controllers
 
         //
         // GET: /News/Delete/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id = 0)
         {
             News news = db.Updates.Find(id);

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="wompustheband" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\rodri_000\\documents\\visual\ studio\ 2013\\Projects\\Wompus_Website\\Wompus_Website\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\rodri_000\\documents\\visual\ studio\ 2013\\Projects\\Wompus_Website\\Wompus_Website\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:ey9c1f2udi.database.windows.net,1433;Initial Catalog=WompusWebsite;User ID=rrog6@ey9c1f2udi;Password=Volleyball56" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\rodri_000\\documents\\visual\ studio\ 2013\\Projects\\Wompus_Website\\Wompus_Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="NewsDBContext-Web.config Connection String" description="" value="Data Source=tcp:ey9c1f2udi.database.windows.net,1433;Initial Catalog=WompusWebsite;User Id=rrog6@ey9c1f2udi;Password=Volleyball56" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\rodri_000\\documents\\visual\ studio\ 2013\\Projects\\Wompus_Website\\Wompus_Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='NewsDBContext']/@connectionString" />
+  </parameter>
+  <parameter name="ShowDBContext-Web.config Connection String" description="" value="Data Source=tcp:ey9c1f2udi.database.windows.net,1433;Initial Catalog=WompusWebsite;User Id=rrog6@ey9c1f2udi;Password=Volleyball56" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\rodri_000\\documents\\visual\ studio\ 2013\\Projects\\Wompus_Website\\Wompus_Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ShowDBContext']/@connectionString" />
+  </parameter>
+</parameters>
