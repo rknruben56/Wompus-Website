@@ -14,8 +14,8 @@ namespace Wompus_Website.Controllers
         [ChildActionOnly]
         public ActionResult _News()
         {
-            NewsDBContext db = new NewsDBContext();
-            var updates = from u in db.Updates select u;
+            WompusEntities db = new WompusEntities();
+            var updates = from u in db.News select u;
             updates = updates.OrderByDescending(u => u.PublishTime);
 
             //Take only certain amount of items

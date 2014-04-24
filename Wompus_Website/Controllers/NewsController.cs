@@ -12,7 +12,7 @@ namespace Wompus_Website.Controllers
 {
     public class NewsController : Controller
     {
-        private NewsDBContext db = new NewsDBContext();
+        private WompusEntities db = new WompusEntities();
 
         //
         // GET: /News/
@@ -22,7 +22,7 @@ namespace Wompus_Website.Controllers
             int pageSize = 3;
             int pageNumber = (page ?? 1);
 
-            var updates = from u in db.Updates select u;
+            var updates = from u in db.News select u;
             updates = updates.OrderByDescending(u => u.PublishTime);
             
             return View(updates.ToPagedList(pageNumber, pageSize));
@@ -34,7 +34,7 @@ namespace Wompus_Website.Controllers
         public ActionResult Details(int id = 0)
         {
             
-            News news = db.Updates.Find(id);
+            News news = db.News.Find(id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -62,7 +62,7 @@ namespace Wompus_Website.Controllers
             {
                 DateTime saveNow = DateTime.Now;
                 news.PublishTime = saveNow;
-                db.Updates.Add(news);
+                db.News.Add(news);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -75,7 +75,7 @@ namespace Wompus_Website.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Edit(int id = 0)
         {
-            News news = db.Updates.Find(id);
+            News news = db.News.Find(id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -104,7 +104,7 @@ namespace Wompus_Website.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Delete(int id = 0)
         {
-            News news = db.Updates.Find(id);
+            News news = db.News.Find(id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -119,8 +119,8 @@ namespace Wompus_Website.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            News news = db.Updates.Find(id);
-            db.Updates.Remove(news);
+            News news = db.News.Find(id);
+            db.News.Remove(news);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WompusWebsiteModelStoreContainer" CdmEntityContainer="WompusEntities">
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="WompusWebsiteModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="UpdateID" ColumnName="UpdateID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PublishTime" ColumnName="PublishTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shows">
+      <EntityTypeMapping TypeName="WompusWebsiteModel.Show">
+        <MappingFragment StoreEntitySet="Shows">
+          <ScalarProperty Name="ShowID" ColumnName="ShowID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ShowDate" ColumnName="ShowDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="WompusWebsiteModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

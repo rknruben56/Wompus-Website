@@ -7,10 +7,7 @@
   <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:ey9c1f2udi.database.windows.net,1433;Initial Catalog=WompusWebsite;User ID=rrog6@ey9c1f2udi;Password=Volleyball56" tags="">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\rodri_000\\documents\\visual\ studio\ 2013\\Projects\\Wompus_Website\\Wompus_Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
-  <parameter name="NewsDBContext-Web.config Connection String" description="" value="Data Source=tcp:ey9c1f2udi.database.windows.net,1433;Initial Catalog=WompusWebsite;User Id=rrog6@ey9c1f2udi;Password=Volleyball56" tags="">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\rodri_000\\documents\\visual\ studio\ 2013\\Projects\\Wompus_Website\\Wompus_Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='NewsDBContext']/@connectionString" />
-  </parameter>
-  <parameter name="ShowDBContext-Web.config Connection String" description="" value="Data Source=tcp:ey9c1f2udi.database.windows.net,1433;Initial Catalog=WompusWebsite;User Id=rrog6@ey9c1f2udi;Password=Volleyball56" tags="">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\rodri_000\\documents\\visual\ studio\ 2013\\Projects\\Wompus_Website\\Wompus_Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ShowDBContext']/@connectionString" />
+  <parameter name="WompusEntities-Web.config Connection String" description="" value="metadata=res://*/Models.WompusModel.csdl|res://*/Models.WompusModel.ssdl|res://*/Models.WompusModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=tcp:ey9c1f2udi.database.windows.net,1433;Initial Catalog=WompusWebsite;User ID=rrog6@ey9c1f2udi;Password=Volleyball56&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\rodri_000\\documents\\visual\ studio\ 2013\\Projects\\Wompus_Website\\Wompus_Website\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WompusEntities']/@connectionString" />
   </parameter>
 </parameters>

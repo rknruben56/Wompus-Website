@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WompusWebsiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="UpdateID" />
+    </Key>
+    <Property Name="UpdateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+    <Property Name="PublishTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Show">
+    <Key>
+      <PropertyRef Name="ShowID" />
+    </Key>
+    <Property Name="ShowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShowDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="WompusEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="News" EntityType="Self.News" />
+    <EntitySet Name="Shows" EntityType="Self.Show" />
+    <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+  </EntityContainer>
+</Schema>

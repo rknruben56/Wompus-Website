@@ -12,7 +12,7 @@ namespace Wompus_Website.Controllers
 {
     public class ShowsController : Controller
     {
-        private ShowDBContext db = new ShowDBContext();
+        private WompusEntities db = new WompusEntities();
 
         //
         // GET: /Shows/

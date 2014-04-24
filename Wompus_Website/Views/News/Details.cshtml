@@ -10,10 +10,10 @@
     <legend>News</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
+         @Html.DisplayNameFor(model => model.title)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
+        @Html.DisplayFor(model => model.title)
     </div>
 
     <div class="display-label">
@@ -31,6 +31,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UpdateID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

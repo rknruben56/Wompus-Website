@@ -88,5 +88,3 @@ C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_W
 C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\bin\PagedList.Mvc.dll
 C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\bin\PagedList.xml
 C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\bin\PagedList.Mvc.xml
-C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\obj\Debug\Wompus_Website.Migrations.InitialCreate.resources
-C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\obj\Debug\Wompus_Website.csproj.GenerateResource.Cache

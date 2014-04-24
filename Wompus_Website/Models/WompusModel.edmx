@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WompusWebsiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="UpdateID" />
+          </Key>
+          <Property Name="UpdateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="600" />
+          <Property Name="PublishTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shows">
+          <Key>
+            <PropertyRef Name="ShowID" />
+          </Key>
+          <Property Name="ShowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="60" />
+          <Property Name="Location" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShowDate" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="600" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="WompusWebsiteModelStoreContainer">
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shows" EntityType="Self.Shows" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WompusWebsiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="UpdateID" />
+          </Key>
+          <Property Name="UpdateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="PublishTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Show">
+          <Key>
+            <PropertyRef Name="ShowID" />
+          </Key>
+          <Property Name="ShowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShowDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="WompusEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="Shows" EntityType="Self.Show" />
+          <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WompusWebsiteModelStoreContainer" CdmEntityContainer="WompusEntities">
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="WompusWebsiteModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="UpdateID" ColumnName="UpdateID" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PublishTime" ColumnName="PublishTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shows">
+            <EntityTypeMapping TypeName="WompusWebsiteModel.Show">
+              <MappingFragment StoreEntitySet="Shows">
+                <ScalarProperty Name="ShowID" ColumnName="ShowID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="ShowDate" ColumnName="ShowDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="WompusWebsiteModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

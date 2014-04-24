@@ -4,35 +4,23 @@
     ViewBag.Title = "Home Page";
 }
 @Styles.Render("~/Content/css")
-
-<div class="container">
-    <div id="slides">
-        <img src="https://farm3.staticflickr.com/2932/13900650141_250ef77fed.jpg" alt="Oops_1">
-        <img src="https://farm4.staticflickr.com/3697/13923775255_d6cabed5f8.jpg" alt="Oops_2">
-        <img src="https://farm8.staticflickr.com/7152/13923830503_25dff782d1.jpg" alt="Oops_3">
-        <img src="https://farm4.staticflickr.com/3725/13900648851_09037c9e47.jpg" alt="Oops_4">
-    </div>
-</div>
+    <ul class="rslides">
+        <li><img src="https://farm3.staticflickr.com/2932/13900650141_250ef77fed.jpg" alt="Oops_1"></li>
+        <li><img src="https://farm4.staticflickr.com/3697/13923775255_d6cabed5f8.jpg" alt="Oops_2"></li>
+        <li><img src="https://farm8.staticflickr.com/7152/13923830503_25dff782d1.jpg" alt="Oops_3"></li>
+        <li><img src="https://farm4.staticflickr.com/3725/13900648851_09037c9e47.jpg" alt="Oops_4"></li>
+    </ul>
 @Html.Action("_News")
 
 @Html.Action("_Music")
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="Scripts/jquery.slides.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="Scripts/responsiveslides.min.js"></script>
 <script>
-    $(function () {
-        $('#slides').slidesjs({
-            width: 940,
-            height: 400,
-            pagination: false,
-            navigation: false,
-            play: {
-                active: false,
-                auto: true,
-                interval: 4000,
-                swap: true
-            }
-        });
-    });
+  $(function() {
+      $(".rslides").responsiveSlides({
+          auto: true,
+      });
+  });
 </script>
 
 

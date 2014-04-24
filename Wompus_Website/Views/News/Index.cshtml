@@ -48,7 +48,7 @@
     {
         <div class="news-content">
             <h3>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.title)
             </h3>
             <p class="description">
                 @Html.DisplayFor(modelItem => item.Description)
@@ -60,9 +60,9 @@
                if(WebSecurity.IsAuthenticated)
                {
                     <p>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.UpdateID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.UpdateID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.UpdateID })
                     </p>
                }
            }

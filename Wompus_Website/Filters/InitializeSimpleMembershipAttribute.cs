@@ -25,11 +25,11 @@ namespace Wompus_Website.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<WompusEntities>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new WompusEntities())
                     {
                         if (!context.Database.Exists())
                         {

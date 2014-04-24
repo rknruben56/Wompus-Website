@@ -88,5 +88,3 @@ C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_W
 C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\obj\Release\Wompus_Website.csprojResolveAssemblyReference.cache
 C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\obj\Release\Wompus_Website.dll
 C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\obj\Release\Wompus_Website.pdb
-C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\obj\Release\Wompus_Website.Migrations.InitialCreate.resources
-C:\Users\rodri_000\documents\visual studio 2013\Projects\Wompus_Website\Wompus_Website\obj\Release\Wompus_Website.csproj.GenerateResource.Cache
