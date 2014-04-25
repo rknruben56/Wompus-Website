@@ -1,7 +1,5 @@
-﻿@model PagedList.IPagedList<Wompus_Website.Models.Show>
-@using PagedList.Mvc;
-<title>@ViewBag.Title = "Shows"</title>
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+﻿@model IEnumerable<Wompus_Website.Models.Show>
+
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 <style>
     .shows-wrapper {
@@ -31,8 +29,10 @@
     }
 </style>
 
-<h2>Shows</h2>
 <div class="shows-wrapper">
+    <h2>
+        Recent Show!
+    </h2>
     @foreach (var item in Model)
     {
         <div class="shows-content">
@@ -49,29 +49,16 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </p>
             @{
-                if (WebSecurity.IsAuthenticated)
-                {
-                    <p>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ShowID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.ShowID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ShowID })
-                    </p>
-                }
-}
+        if (WebSecurity.IsAuthenticated)
+        {
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ShowID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ShowID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ShowID })
+            </p>
+        }
+            }
         </div>
     }
 </div>
-<div class="pagination-wrapper">
-    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-</div>
-
-@{
-    if (WebSecurity.IsAuthenticated)
-    {
-        <div class="create-link-wrapper">
-            @Html.ActionLink("Create New", "Create")
-        </div>
-    }
-}

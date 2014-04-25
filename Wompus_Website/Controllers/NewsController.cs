@@ -56,6 +56,7 @@ namespace Wompus_Website.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create(News news)
         {
             if (ModelState.IsValid)
@@ -88,6 +89,7 @@ namespace Wompus_Website.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit(News news)
         {
             if (ModelState.IsValid)

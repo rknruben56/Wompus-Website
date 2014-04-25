@@ -5,14 +5,15 @@
         ViewBag.Title = "News";
     }
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <style>
         .news-wrapper {
             float: left;
-            max-width: 700px;
+            width: 660px;
             padding-top: 10px;
         }
-        
-        
+
+
 
         .news-content {
             background-color: #000;
@@ -33,7 +34,7 @@
 
         .pagination-wrapper {
             padding-top: 15px;
-            position: relative;
+            clear: both;
         }
 
         .create-link-wrapper {
@@ -47,12 +48,12 @@
     @foreach (var item in Model)
     {
         <div class="news-content">
-            <h3>
+            <h2>
                 @Html.DisplayFor(modelItem => item.title)
-            </h3>
-            <p class="description">
+            </h2>
+            <h3>
                 @Html.DisplayFor(modelItem => item.Description)
-            </p>
+            </h3>
             <p class="publish-time">
                 @Html.DisplayFor(modelItem => item.PublishTime)
             </p>

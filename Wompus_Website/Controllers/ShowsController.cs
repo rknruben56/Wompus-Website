@@ -17,6 +17,7 @@ namespace Wompus_Website.Controllers
         //
         // GET: /Shows/
 
+        [ValidateInput(false)]
         public ActionResult Index(int? page)
         {
             int pageSize = 3;
@@ -54,6 +55,7 @@ namespace Wompus_Website.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create(Show show)
         {
             if (ModelState.IsValid)
@@ -84,6 +86,7 @@ namespace Wompus_Website.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit(Show show)
         {
             if (ModelState.IsValid)

@@ -1,11 +1,10 @@
 ﻿html {
-    background-color: gray;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: gray;
+    background-image: url(../Images/gray-background.jpg);
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
@@ -101,7 +100,6 @@ h5, h6 {
 }
 
 #header-wrapper {
-    background-color: gray;
     margin: auto auto;
     max-width: 960px;
 }
@@ -112,7 +110,6 @@ h5, h6 {
 }
 
 .body {
-    background-color: gray;
     clear: both;
     padding-bottom: 35px;
 }
@@ -124,7 +121,6 @@ h5, h6 {
 
 footer {
     clear: both;
-    background-color: gray;
     font-size: .8em;
     height: 100px;
 }
@@ -183,14 +179,15 @@ footer {
         list-style: none;
     }
 
-/* response slide stuff */
+/* response slide stuff
+---------------------------------------------------- */
     .rslides {
   position: relative;
   list-style: none;
   overflow: hidden;
   box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
   -moz-box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
-  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0); 
   width: 100%;
   max-height: 400px;
   padding: 0;

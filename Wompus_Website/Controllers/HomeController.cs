@@ -32,6 +32,20 @@ namespace Wompus_Website.Controllers
             return PartialView();
         }
 
+        //Partial View for the Shows in the Home Page
+        [ChildActionOnly]
+        public ActionResult _Shows()
+        {
+            WompusEntities db = new WompusEntities();
+            var show = from s in db.Shows select s;
+            show = show.OrderByDescending(u => u.ShowDate);
+
+            //Take only the most recent one
+            show = show.Take(1);
+
+            return PartialView(show);
+        }
+
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
