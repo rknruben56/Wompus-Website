@@ -2,42 +2,58 @@
     ViewBag.Title = "Contact";
 }
 
+<style>
+    .contact-content {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=72)";
+        filter: alpha(opacity=72);
+        -moz-opacity: 0.72;
+        -khtml-opacity: 0.72;
+        opacity: 0.72;
+        border: 1px #888888 solid;
+        background-color: #080707;
+        padding: 10px;
+    }
+</style>
+
 <hgroup class="title">
     <h1>@ViewBag.Title</h1>
-    <br />
-    <h2>@ViewBag.Message</h2>
 </hgroup>
 
-<section class="contact">
-    <header>
-        <h3>Phone</h3>
-    </header>
-    <p>
-        <span class="label">Cell phone:</span>
-        <span style="color:white">708.921.1139</span>
-    </p>
-</section>
+<div class="contact-content">
+    <section class="contact">
+        <header>
+            <h3>Phone</h3>
+        </header>
+        <p>
+            <span class="label" style="color:white">Cell phone:</span>
+            <span style="color:white">708.921.1139</span>
+        </p>
+    </section>
 
-<section class="contact">
-    <header>
-        <h3>Email</h3>
-    </header>
-    <p>
-        <span class="label">Support:</span>
-        <span><a href="mailto:wompusband@gmail.com">wompusband@gmail.com</a></span>
-    </p>
-</section>
+    <section class="contact">
+        <header>
+            <h3>Email</h3>
+        </header>
+        <p>
+            <span class="label" style="color:white">GMAIL:</span>
+            <span><a href="mailto:wompusband@gmail.com">wompusband@gmail.com</a></span>
+        </p>
+    </section>
 
-<section class="contact">
-    <header>
-        <h3>Social Media stuff</h3>
-    </header>
-    <p>
-        <span class="label">Facebook:</span>
-        <span><a href="https://www.facebook.com/wompusband" target="_blank">facebook.com/wompusband</a></span>
-    </p>
-    <p>
-        <span class="label">Twitter:</span>
-        <span><a href="https://twitter.com/wompusmusic" target="_blank">twitter.com/wompusmusic</a></span>
-    </p>
-</section>
+    <section class="contact">
+        <header>
+            <h3>Social Media stuff</h3>
+        </header>
+        <p>
+            <span class="label" style="color:white">Facebook:</span>
+            <span><a href="https://www.facebook.com/wompusband" target="_blank">facebook.com/wompusband</a></span>
+        </p>
+        <p>
+            <span class="label" style="color:white">Twitter:</span>
+            <span><a href="https://twitter.com/wompusmusic" target="_blank">twitter.com/wompusmusic</a></span>
+        </p>
+    </section>
+
+</div>
+
+

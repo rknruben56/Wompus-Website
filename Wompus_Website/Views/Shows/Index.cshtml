@@ -4,18 +4,16 @@
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 <style>
-    .shows-wrapper {
-        float: left;
-        width: 660px;
-        padding-top: 10px;
-    }
-
     .shows-content {
-        background-color: #000;
-        float: left;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=72)";
+        filter: alpha(opacity=72);
+        -moz-opacity: 0.72;
+        -khtml-opacity: 0.72;
+        opacity: 0.72;
+        border: 1px #888888 solid;
+        background-color: #080707;
         margin: 0 0 20px;
         padding: 20px 20px 0;
-        width: 660px;
     }
 
     .description {
@@ -32,7 +30,6 @@
 </style>
 
 <h2>Shows</h2>
-<div class="shows-wrapper">
     @foreach (var item in Model)
     {
         <div class="shows-content">
@@ -40,13 +37,13 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </h2>
             <h3>
-                @Html.DisplayFor(modelItem => item.Location)
+                @Html.Raw(item.Location.ToString())
             </h3>
             <h3>
                 @Html.DisplayFor(modelItem => item.ShowDate, "ShortDateTime")
             </h3>
             <p class="description">
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.Raw(item.Description.ToString())
             </p>
             @{
                 if (WebSecurity.IsAuthenticated)
@@ -60,7 +57,6 @@
 }
         </div>
     }
-</div>
 <div class="pagination-wrapper">
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
@@ -75,3 +71,10 @@
         </div>
     }
 }
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="Scripts/jquery.fitvids.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".shows-content").fitVids();
+    });
+</script>

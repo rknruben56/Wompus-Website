@@ -7,20 +7,16 @@
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <style>
-        .news-wrapper {
-            float: left;
-            width: 660px;
-            padding-top: 10px;
-        }
-
-
-
         .news-content {
-            background-color: #000;
-            float: left;
             margin: 0 0 20px;
             padding: 20px 20px 0;
-            width: 660px;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=72)";
+            filter: alpha(opacity=72);
+            -moz-opacity: 0.72;
+            -khtml-opacity: 0.72;
+            opacity: 0.72;
+            border: 1px #888888 solid;
+            background-color: #080707;
         }
 
         .description {
@@ -44,15 +40,14 @@
     </style>
 <h2>Updates</h2>
 
-<div class="news-wrapper">
     @foreach (var item in Model)
     {
         <div class="news-content">
             <h2>
-                @Html.DisplayFor(modelItem => item.title)
+                @Html.Raw(item.title.ToString())
             </h2>
             <h3>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.Raw(item.Description.ToString())
             </h3>
             <p class="publish-time">
                 @Html.DisplayFor(modelItem => item.PublishTime)
@@ -69,7 +64,7 @@
            }
         </div>
     }
-</div>
+
 <div class="pagination-wrapper">
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
