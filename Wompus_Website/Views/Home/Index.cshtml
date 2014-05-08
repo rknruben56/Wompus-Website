@@ -4,17 +4,44 @@
     ViewBag.Title = "Home Page";
 }
 @Styles.Render("~/Content/css")
+<style>
+    .main{
+        float: left;
+        max-width: 600px;
+    }
+
+    .side-content {
+        float: right;
+        max-width:300px;
+        padding-left: 60px;
+    }
+</style>
     <ul class="rslides">
         <li><img src="https://farm3.staticflickr.com/2932/13900650141_250ef77fed.jpg" alt="Oops_1"></li>
         <li><img src="https://farm4.staticflickr.com/3697/13923775255_d6cabed5f8.jpg" alt="Oops_2"></li>
         <li><img src="https://farm8.staticflickr.com/7152/13923830503_25dff782d1.jpg" alt="Oops_3"></li>
         <li><img src="https://farm4.staticflickr.com/3725/13900648851_09037c9e47.jpg" alt="Oops_4"></li>
     </ul>
-@Html.Action("_News")
+<div class="main">
+    @Html.Action("_News")
 
-@Html.Action("_Music")
+    @Html.Action("_Shows")
+</div>
 
-@Html.Action("_Shows")
+<div class="side-content">
+        @Html.Action("_Music")
+        <a class="twitter-timeline" width="300" height="300" padding-top="10" href="https://twitter.com/wompusmusic" data-widget-id="464235408394436608">Tweets by Wompus</a>
+        <script>
+            !function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + "://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");</script>
+</div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="Scripts/responsiveslides.min.js"></script>
