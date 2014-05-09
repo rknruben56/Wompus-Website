@@ -49,16 +49,6 @@
             <p class="description">
                 @Html.Raw(item.Description.ToString())
             </p>
-            @{
-        if (WebSecurity.IsAuthenticated)
-        {
-            <p>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ShowID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ShowID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ShowID })
-            </p>
-        }
-            }
         </div>
     }
 </div>

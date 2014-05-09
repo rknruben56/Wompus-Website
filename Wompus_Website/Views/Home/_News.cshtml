@@ -41,7 +41,7 @@
 @if (Model != null)
 {
     <div class="news-wrapper">
-        <h2>Latest Update!</h2>
+        <h2>Latest Updates!</h2>
 
         @foreach (var item in Model)
         {
@@ -49,9 +49,9 @@
                 <h2>
                     @Html.Raw(item.title.ToString())
                 </h2>
-                <h3>
+                <p class="description">
                     @Html.Raw(item.Description.ToString())
-                </h3>
+                </p>
                 <p class="publish-time">
                     @Html.DisplayFor(modelItem => item.PublishTime)
                 </p>

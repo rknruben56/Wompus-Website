@@ -20,7 +20,7 @@ namespace Wompus_Website.Controllers
             updates = updates.OrderByDescending(u => u.PublishTime);
 
             //Take only certain amount of items
-            updates = updates.Take(1);
+            updates = updates.Take(2);
 
             return PartialView(updates);
         }
