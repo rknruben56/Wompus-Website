@@ -29,27 +29,35 @@
         padding-top: 15px;
     }
 </style>
-
 <div class="shows-wrapper">
+
     <h2>
         Next Show!
     </h2>
-    @foreach (var item in Model)
+    @if (!Model.Any())
     {
         <div class="shows-content">
-            <h2>
-                @Html.DisplayFor(modelItem => item.Title)
-            </h2>
-            <h3>
-                @Html.Raw(item.Location.ToString())
-            </h3>
-            <h3>
-                @Html.DisplayFor(modelItem => item.ShowDate, "ShortDateTime")
-            </h3>
-            <p class="description">
-                @Html.Raw(item.Description.ToString())
-            </p>
+            <h3 style="padding-bottom: 30px">Stay tuned for more upcoming Shows!</h3>
         </div>
+    }
+    else { 
+        foreach (var item in Model)
+        {
+            <div class="shows-content">
+                <h2>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </h2>
+                <h3>
+                    @Html.Raw(item.Location.ToString())
+                </h3>
+                <h3>
+                    @Html.DisplayFor(modelItem => item.ShowDate, "ShortDateTime")
+                </h3>
+                <p class="description">
+                    @Html.Raw(item.Description.ToString())
+                </p>
+            </div>
+        }
     }
 </div>
 
