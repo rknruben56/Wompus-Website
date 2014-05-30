@@ -36,7 +36,7 @@ namespace Wompus_Website.Controllers
         public ActionResult _Shows()
         {
             WompusEntities db = new WompusEntities();
-            var show = from s in db.Shows where EntityFunctions.DiffDays(s.ShowDate, DateTime.Now) < 0 orderby s.ShowDate select s;
+            var show = from s in db.Shows where EntityFunctions.DiffDays(s.ShowDate, DateTime.Now) <= 0 orderby s.ShowDate select s;
 
             //Take only the one closest to the current date
             show = (IOrderedQueryable<Wompus_Website.Models.Show>) show.Take(1);
