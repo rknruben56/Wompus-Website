@@ -40,7 +40,7 @@
                 @Html.Raw(item.Location.ToString())
             </h3>
             <h3>
-                @Html.DisplayFor(modelItem => item.ShowDate, "ShortDateTime")
+                @item.ShowDate.ToString("dddd MMMM dd yyyy")
             </h3>
             <p class="description">
                 @Html.Raw(item.Description.ToString())
