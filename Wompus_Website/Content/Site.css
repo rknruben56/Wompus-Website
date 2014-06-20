@@ -5,6 +5,7 @@
 
 body {
     background-image: url(../Images/gray-background.jpg);
+    background-size: cover;
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
@@ -712,20 +713,6 @@ input[type="checkbox"].input-validation-error {
       }
     }
 }
-
-    /* Main Content Div
-   ---------------------------------------------------------- */
-    .main-div {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=72)";
-        filter: alpha(opacity=72);
-        -moz-opacity: 0.72;
-        -khtml-opacity: 0.72;
-        opacity: 0.72;
-        border: 1px #888888 solid;
-        background-color: #080707;
-        margin: 0 0 20px;
-        padding: 20px 20px 0;
-    }
 
     /* footer
     ----------------------------------------------------------*/
