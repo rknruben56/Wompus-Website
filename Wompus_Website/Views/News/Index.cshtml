@@ -1,71 +1,39 @@
 ﻿@model PagedList.IPagedList<Wompus_Website.Models.News>
 @using PagedList.Mvc;
-    
-    @{
-        ViewBag.Title = "News";
-    }
-    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <style>
-        .news-content {
-            margin: 0 0 20px;
-            padding: 20px 20px 0;
-            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=72)";
-            filter: alpha(opacity=72);
-            -moz-opacity: 0.72;
-            -khtml-opacity: 0.72;
-            opacity: 0.72;
-            border: 1px #888888 solid;
-            background-color: #080707;
-        }
 
-        .description {
-            color: white;
-        }
-
-        .publish-time {
-            color: white;
-            font-size: .8em;
-        }
-
-        .pagination-wrapper {
-            padding-top: 15px;
-            clear: both;
-        }
-
-        .create-link-wrapper {
-            padding-top: 15px;
-            position: relative;
-        }
-    </style>
+@{
+    ViewBag.Title = "News";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 <h2>Updates</h2>
 
-    @foreach (var item in Model)
+@foreach (var item in Model)
+{
+    <div class="body div-content">
+        <h2>
+            @Html.Raw(item.title.ToString())
+        </h2>
+        <h3>
+            @Html.Raw(item.Description.ToString())
+        </h3>
+        <p class="body publish-time">
+            @Html.DisplayFor(modelItem => item.PublishTime)
+        </p>
+        @{
+    if (WebSecurity.IsAuthenticated)
     {
-        <div class="news-content">
-            <h2>
-                @Html.Raw(item.title.ToString())
-            </h2>
-            <h3>
-                @Html.Raw(item.Description.ToString())
-            </h3>
-            <p class="publish-time">
-                @Html.DisplayFor(modelItem => item.PublishTime)
-            </p>
-           @{
-               if(WebSecurity.IsAuthenticated)
-               {
-                    <p>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.UpdateID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.UpdateID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.UpdateID })
-                    </p>
-               }
-           }
-        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = item.UpdateID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.UpdateID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.UpdateID })
+        </p>
     }
+        }
+    </div>
+}
 
-<div class="pagination-wrapper">
+<div class="body pagination-wrapper">
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
@@ -74,8 +42,8 @@
 @{
     if (WebSecurity.IsAuthenticated)
     {
-       <div class="create-link-wrapper">
+        <div class="body create-link-wrapper">
             @Html.ActionLink("Create New", "Create")
-       </div> 
+        </div>
     }
 }

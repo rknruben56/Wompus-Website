@@ -1,61 +1,22 @@
 ﻿@model IEnumerable<Wompus_Website.Models.News>
 
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-<style>
-    .news-wrapper {
-    }
-
-    .news-content {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=72)";
-        filter: alpha(opacity=72);
-        -moz-opacity: 0.72;
-        -khtml-opacity: 0.72;
-        opacity: 0.72;
-        border: 1px #888888 solid;
-        background-color: #080707;
-        margin: 0 0 20px;
-        padding: 20px 20px 0;
-    }
-
-    .description {
-        color: white;
-    }
-
-    .publish-time {
-        color: white;
-        font-size: .8em;
-    }
-
-    .pagination-wrapper {
-        padding-top: 15px;
-        position: relative;
-    }
-
-    .create-link-wrapper {
-        padding-top: 15px;
-        position: relative;
-
-
-    }
-</style>
+<h2>Latest Updates!</h2>
 @if (Model != null)
 {
-    <div class="news-wrapper">
-        <h2>Latest Updates!</h2>
 
-        @foreach (var item in Model)
-        {
-            <div class="news-content">
-                <h2>
-                    @Html.Raw(item.title.ToString())
-                </h2>
-                <p class="description">
-                    @Html.Raw(item.Description.ToString())
-                </p>
-                <p class="publish-time">
-                    @Html.DisplayFor(modelItem => item.PublishTime)
-                </p>
-            </div>
-        }
-    </div>   
+    foreach (var item in Model)
+    {
+        <div class="body div-content">
+            <h2>
+                @Html.Raw(item.title.ToString())
+            </h2>
+            <p class="body description-font">
+                @Html.Raw(item.Description.ToString())
+            </p>
+            <p class="body publish-time">
+                @Html.DisplayFor(modelItem => item.PublishTime)
+            </p>
+        </div>
+    }
 }

@@ -34,6 +34,7 @@ a {
 header, footer, hgroup,
 nav, section {
     display: block;
+    padding-bottom: 10px;
 }
 
 mark {
@@ -110,21 +111,19 @@ h5, h6 {
 
 .body {
     clear: both;
-    padding-bottom: 35px;
+    /*padding-bottom: 35px;*/
 }
 
-    .main-content {
-        padding-left: 10px;
-        padding-top: 30px;
-    }
+.main-content {
+    padding-left: 10px;
+    padding-top: 30px;
+}
 
 footer {
     clear: both;
     font-size: .8em;
     height: 100px;
 }
-
-
 
 /* site title
 ----------------------------------------------------------*/
@@ -138,12 +137,12 @@ footer {
     margin: 0;
 }
 
-.site-title a, .site-title a:hover, .site-title a:active {
-    background: none;
-    color: #fff;
-    outline: none;
-    text-decoration: none;
-}
+    .site-title a, .site-title a:hover, .site-title a:active {
+        background: none;
+        color: #fff;
+        outline: none;
+        text-decoration: none;
+    }
 
 
 /* login
@@ -163,12 +162,12 @@ footer {
         text-decoration: none;
     }
 
-    #login a.username {
-        background: none;
-        margin: 0;
-        padding: 0;
-        text-decoration: underline;
-    }
+        #login a.username {
+            background: none;
+            margin: 0;
+            padding: 0;
+            text-decoration: underline;
+        }
 
     #login ul {
         margin: 0;
@@ -181,41 +180,41 @@ footer {
 
 /* response slide stuff
 ---------------------------------------------------- */
-    .rslides {
-  position: relative;
-  list-style: none;
-  overflow: hidden;
-  box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
-  -moz-box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
-  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0); 
-  width: 100%;
-  max-height: 400px;
-  padding: 0;
-  margin: 0 auto 40px;
-  }
+.rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
+    -moz-box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
+    width: 100%;
+    max-height: 400px;
+    padding: 0;
+    margin: 0 auto 40px;
+}
 
-.rslides li {
-  -webkit-backface-visibility: hidden;
-  position: absolute;
-  display: none;
-  width: 100%;
-  left: 0;
-  top: 0;
-  }
+    .rslides li {
+        -webkit-backface-visibility: hidden;
+        position: absolute;
+        display: none;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
 
-.rslides li:first-child {
-  position: relative;
-  display: block;
-  float: left;
-  }
+        .rslides li:first-child {
+            position: relative;
+            display: block;
+            float: left;
+        }
 
-.rslides img {
-  display: block;
-  height: auto;
-  float: left;
-  width: 100%;
-  border: 0;
-  }
+    .rslides img {
+        display: block;
+        height: auto;
+        float: left;
+        width: 100%;
+        border: 0;
+    }
 
 
 /* menu
@@ -243,10 +242,10 @@ ul#menu {
             text-decoration: none;
         }
 
-        ul#menu li a:hover {
-            color: #000;
-            text-decoration: none;
-        }
+            ul#menu li a:hover {
+                color: #000;
+                text-decoration: none;
+            }
 
 
 /* page elements
@@ -257,14 +256,14 @@ hgroup.title {
     margin-bottom: 10px;
 }
 
-hgroup.title h1, hgroup.title h2 {
-    display: inline;
-}
+    hgroup.title h1, hgroup.title h2 {
+        display: inline;
+    }
 
-hgroup.title h2 {
-    font-weight: normal;
-    margin-left: 3px;
-}
+    hgroup.title h2 {
+        font-weight: normal;
+        margin-left: 3px;
+    }
 
 /* ordered list */
 ol.round {
@@ -369,12 +368,12 @@ aside {
         width: 250px;
     }
 
-    #loginForm input[type="checkbox"],
-    #loginForm input[type="submit"],
-    #loginForm input[type="button"],
-    #loginForm button {
-        width: auto;
-    }
+        #loginForm input[type="checkbox"],
+        #loginForm input[type="submit"],
+        #loginForm input[type="button"],
+        #loginForm button {
+            width: auto;
+        }
 
 #socialLoginForm {
     margin-left: 40px;
@@ -383,7 +382,7 @@ aside {
 }
 
     #socialLoginForm h2 {
-        margin-bottom:  5px;
+        margin-bottom: 5px;
     }
 
 #socialLoginList button {
@@ -434,9 +433,9 @@ label {
     font-weight: 600;
 }
 
-label.checkbox {
-    display: inline;
-}
+    label.checkbox {
+        display: inline;
+    }
 
 input, textarea {
     border: 1px solid #e2e2e2;
@@ -457,32 +456,32 @@ textarea {
         border: 1px solid #7ac0da;
     }
 
-    input[type="checkbox"] {
-        background: transparent;
-        border: inherit;
-        width: auto;
-    }
+input[type="checkbox"] {
+    background: transparent;
+    border: inherit;
+    width: auto;
+}
 
-    input[type="submit"],
-    input[type="button"],
-    button {
-        background-color: #d3dce0;
-        border: 1px solid #787878;
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: 600;
-        padding: 7px;
-        margin-right: 8px;
-        width: auto;
-    }
+input[type="submit"],
+input[type="button"],
+button {
+    background-color: #d3dce0;
+    border: 1px solid #787878;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 7px;
+    margin-right: 8px;
+    width: auto;
+}
 
-    td input[type="submit"],
-    td input[type="button"],
-    td button {
-        font-size: 1em;
-        padding: 4px;
-        margin-right: 4px;
-    }
+td input[type="submit"],
+td input[type="button"],
+td button {
+    font-size: 1em;
+    padding: 4px;
+    margin-right: 4px;
+}
 
 /* info and errors */
 .message-info {
@@ -646,7 +645,7 @@ input[type="checkbox"].input-validation-error {
     /* features */
     section.feature {
         float: none;
-        padding: 10px;
+        padding-bottom: 10px;
         width: auto;
     }
 
@@ -683,51 +682,83 @@ input[type="checkbox"].input-validation-error {
 
     /* For tablets & smart phones */
     @media (max-width: 767px) {
-      body {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      .container {
-        width: auto
-      }
+        body {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .container {
+            width: auto;
+        }
     }
 
     /* For smartphones */
     @media (max-width: 480px) {
-      .container {
-        width: auto
-      }
+        .container {
+            width: auto;
+        }
     }
 
     /* For smaller displays like laptops */
     @media (min-width: 768px) and (max-width: 979px) {
-      .container {
-        width: 724px
-      }
+        .container {
+            width: 724px;
+        }
     }
 
     /* For larger displays */
     @media (min-width: 1200px) {
-      .container {
-        width: 1170px
-      }
+        .container {
+            width: 1170px;
+        }
     }
 }
 
-    /* footer
-    ----------------------------------------------------------*/
-    footer .float-left,
-    footer .float-right {
-        float: none;
-    }
+/* Shows/News/About/Contact Content
+----------------------------------------------------------*/
+.div-content {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=72)";
+    filter: alpha(opacity=72);
+    -moz-opacity: 0.72;
+    -khtml-opacity: 0.72;
+    opacity: 0.72;
+    border: 1px #888888 solid;
+    background-color: #080707;
+    margin: 0 0 20px;
+    padding: 20px 20px 0;
+}
 
-    footer {
-        text-align: center;
-        height: auto;
-        padding: 10px 0;
-    }
+.description-font {
+    color: white;
+}
+
+.pagination-wrapper {
+    clear: both;
+}
+
+.create-link-wrapper {
+    padding-top: 15px;
+}
+
+/*News Only*/
+.publish-time {
+    color: white;
+    font-size: .8em;
+}
+
+/* footer
+    ----------------------------------------------------------*/
+footer .float-left,
+footer .float-right {
+    float: none;
+}
+
+footer {
+    text-align: center;
+    height: auto;
+    padding: 10px 0;
+}
 
     footer p {
         margin: 0;
     }
-   

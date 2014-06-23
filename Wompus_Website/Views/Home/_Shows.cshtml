@@ -1,63 +1,31 @@
 ﻿@model IEnumerable<Wompus_Website.Models.Show>
 
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-<style>
-    .shows-wrapper {
-        padding-top: 10px;
-    }
-    .shows-content {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=72)";
-        filter: alpha(opacity=72);
-        -moz-opacity: 0.72;
-        -khtml-opacity: 0.72;
-        opacity: 0.72;
-        border: 1px #888888 solid;
-        background-color: #080707;
-        margin: 0 0 20px;
-        padding: 20px 20px 0;
-    }
-
-    .description {
-        color: white;
-    }
-
-    .pagination-wrapper {
-        clear: both;
-    }
-
-    .create-link-wrapper {
-        padding-top: 15px;
-    }
-</style>
-<div class="shows-wrapper">
-
-    <h2>
-        Next Show!
-    </h2>
-    @if (!Model.Any())
+<h2> Next Show! </h2>
+@if (!Model.Any())
+{
+    <div class="body div-content">
+        <h3 style="padding-bottom: 30px">Stay tuned for more upcoming Shows!</h3>
+    </div>
+}
+else
+{
+    foreach (var item in Model)
     {
-        <div class="shows-content">
-            <h3 style="padding-bottom: 30px">Stay tuned for more upcoming Shows!</h3>
+        <div class="body div-content">
+            <h2>
+                @Html.DisplayFor(modelItem => item.Title)
+            </h2>
+            <h3>
+                @Html.Raw(item.Location.ToString())
+            </h3>
+            <h3>
+                @item.ShowDate.ToString("dddd MMMM dd yyyy h:mm tt")
+            </h3>
+            <p class="body description-font">
+                @Html.Raw(item.Description.ToString())
+            </p>
         </div>
     }
-    else { 
-        foreach (var item in Model)
-        {
-            <div class="shows-content">
-                <h2>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </h2>
-                <h3>
-                    @Html.Raw(item.Location.ToString())
-                </h3>
-                <h3>
-                    @item.ShowDate.ToString("dddd MMMM dd yyyy")
-                </h3>
-                <p class="description">
-                    @Html.Raw(item.Description.ToString())
-                </p>
-            </div>
-        }
-    }
-</div>
+}
 
