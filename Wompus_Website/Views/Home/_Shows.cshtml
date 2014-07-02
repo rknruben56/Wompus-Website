@@ -14,7 +14,7 @@ else
     {
         <div class="body div-content">
             <h2>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.ActionLink(item.Title.ToString(), "Details", "Shows", new { id = item.ShowID }, null)
             </h2>
             <h3>
                 @Html.Raw(item.Location.ToString())

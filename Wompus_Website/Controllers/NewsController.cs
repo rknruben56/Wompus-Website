@@ -30,7 +30,7 @@ namespace Wompus_Website.Controllers
 
         //
         // GET: /News/Details/5
-         [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult Details(int id = 0)
         {
             

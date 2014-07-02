@@ -209,6 +209,15 @@
     <Compile Include="Models\UserProfile.cs">
       <DependentUpon>WompusModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\webpages_Membership.cs">
+      <DependentUpon>WompusModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_OAuthMembership.cs">
+      <DependentUpon>WompusModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Roles.cs">
+      <DependentUpon>WompusModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\WompusModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

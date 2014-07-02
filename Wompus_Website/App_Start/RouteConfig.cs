@@ -13,6 +13,7 @@ namespace Wompus_Website
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            /* Following Custom Routes not Used */
             //News Route
             routes.MapRoute(
                 name: "News",

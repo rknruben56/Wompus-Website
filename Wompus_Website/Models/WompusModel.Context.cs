@@ -28,5 +28,8 @@ namespace Wompus_Website.Models
         public DbSet<News> News { get; set; }
         public DbSet<Show> Shows { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<webpages_Membership> webpages_Membership { get; set; }
+        public DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
+        public DbSet<webpages_Roles> webpages_Roles { get; set; }
     }
 }

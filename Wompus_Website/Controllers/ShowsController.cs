@@ -31,7 +31,7 @@ namespace Wompus_Website.Controllers
 
         //
         // GET: /Shows/Details/5
-         [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult Details(int id = 0)
         {
             Show show = db.Shows.Find(id);
