@@ -2,13 +2,12 @@
 @using PagedList.Mvc;
 <title>@ViewBag.Title = "Shows"</title>
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
-<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 <h2>Shows</h2>
 @foreach (var item in Model)
 {
     <div class="body div-content">
         <h2>
-            @Html.DisplayFor(modelItem => item.Title)
+            @Html.ActionLink(item.Title.ToString(), "Details", new { id = item.ShowID})
         </h2>
         <h3>
             @Html.Raw(item.Location.ToString())
@@ -24,7 +23,6 @@
     {
         <p>
             @Html.ActionLink("Edit", "Edit", new { id = item.ShowID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ShowID }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.ShowID })
         </p>
     }
@@ -45,10 +43,3 @@
         </div>
     }
 }
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="Scripts/jquery.fitvids.js"></script>
-<script>
-    $(document).ready(function () {
-        $(".body").fitVids();
-    });
-</script>

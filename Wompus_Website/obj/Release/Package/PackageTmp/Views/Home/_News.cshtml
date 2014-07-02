@@ -9,7 +9,7 @@
     {
         <div class="body div-content">
             <h2>
-                @Html.Raw(item.title.ToString())
+                @Html.ActionLink(item.title.ToString(), "Details", "News", new { id = item.UpdateID }, null)
             </h2>
             <p class="body description-font">
                 @Html.Raw(item.Description.ToString())

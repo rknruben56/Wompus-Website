@@ -8,6 +8,10 @@
         <EntityTypeShape EntityType="WompusWebsiteModel.News" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WompusWebsiteModel.Show" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WompusWebsiteModel.UserProfile" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WompusWebsiteModel.webpages_Membership" Width="3.125" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="WompusWebsiteModel.webpages_OAuthMembership" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WompusWebsiteModel.webpages_Roles" Width="1.5" PointX="0.75" PointY="6.75" />
+        <AssociationConnector Association="WompusWebsiteModel.webpages_UsersInRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

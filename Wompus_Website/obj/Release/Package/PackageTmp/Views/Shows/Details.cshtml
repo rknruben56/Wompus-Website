@@ -4,40 +4,17 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<fieldset>
-    <legend>Show</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Location)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Location)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ShowDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ShowDate)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ShowID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="body div-content">
+    <h2>
+        @Model.Title.ToString()
+    </h2>
+    <h3>
+        @Html.Raw(Model.Location.ToString())
+    </h3>
+    <h3>
+        @Model.ShowDate.ToString("dddd MMMM dd yyyy h:mm tt")
+    </h3>
+    <p class="body description-font">
+        @Html.Raw(Model.Description.ToString())
+    </p>
+</div>

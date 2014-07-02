@@ -12,7 +12,7 @@
 {
     <div class="body div-content">
         <h2>
-            @Html.Raw(item.title.ToString())
+            @Html.ActionLink(item.title.ToString(), "Details", new { id = item.UpdateID })
         </h2>
         <h3>
             @Html.Raw(item.Description.ToString())
@@ -25,7 +25,6 @@
     {
         <p>
             @Html.ActionLink("Edit", "Edit", new { id = item.UpdateID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.UpdateID }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.UpdateID })
         </p>
     }
@@ -47,3 +46,11 @@
         </div>
     }
 }
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="Scripts/jquery.fitvids.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".body").fitVids();
+    });
+</script>

@@ -35,11 +35,17 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <!-- <p>&copy; @DateTime.Now.Year - @Html.ActionLink("Wompus", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink"})</p> -->
                     <p>&copy; @DateTime.Now.Year - Wompus</p>
                 </div>
             </div>
         </footer>
         @RenderSection("scripts", required: false)
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="../../Scripts/jquery.fitvids.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".body").fitVids();
+            });
+        </script>
     </body>
 </html>

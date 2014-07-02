@@ -3,34 +3,15 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="body div-content">
+    <h2>
+        @Model.title.ToString()
+    </h2>
+    <p class="body description-font">
+        @Html.Raw(Model.Description.ToString())
+    </p>
+    <p class="body publish-time">
+        @Html.DisplayFor(modelModel => Model.PublishTime)
+    </p>
+</div>
 
-<h2>Details</h2>
-
-<fieldset>
-    <legend>News</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.title)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PublishTime)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PublishTime)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.UpdateID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
