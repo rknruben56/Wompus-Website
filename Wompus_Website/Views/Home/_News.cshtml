@@ -1,6 +1,4 @@
 ﻿@model IEnumerable<Wompus_Website.Models.News>
-
-<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 <h2>Latest Updates!</h2>
 @if (Model != null)
 {
@@ -8,15 +6,9 @@
     foreach (var item in Model)
     {
         <div class="body div-content">
-            <h2>
+            <h2 style="padding-bottom: 35px">
                 @Html.ActionLink(item.title.ToString(), "Details", "News", new { id = item.UpdateID }, null)
             </h2>
-            <p class="body description-font">
-                @Html.Raw(item.Description.ToString())
-            </p>
-            <p class="body publish-time">
-                @Html.DisplayFor(modelItem => item.PublishTime)
-            </p>
         </div>
     }
 }

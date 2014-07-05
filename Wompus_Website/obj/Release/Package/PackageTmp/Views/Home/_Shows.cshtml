@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<Wompus_Website.Models.Show>
 
-<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 <h2> Next Show! </h2>
 @if (!Model.Any())
 {
@@ -19,12 +18,9 @@ else
             <h3>
                 @Html.Raw(item.Location.ToString())
             </h3>
-            <h3>
+            <h3 style="padding-bottom: 10px">
                 @item.ShowDate.ToString("dddd MMMM dd yyyy h:mm tt")
             </h3>
-            <p class="body description-font">
-                @Html.Raw(item.Description.ToString())
-            </p>
         </div>
     }
 }
