@@ -9,6 +9,9 @@
             <h2 style="padding-bottom: 35px">
                 @Html.ActionLink(item.title.ToString(), "Details", "News", new { id = item.UpdateID }, null)
             </h2>
+            <h3 style="padding-bottom: 20px">
+                @Html.Raw(item.Description.ToString())
+            </h3>
         </div>
     }
 }

@@ -19,7 +19,7 @@ namespace Wompus_Website.Controllers
 
         public ActionResult Index(int? page)
         {
-            int pageSize = 3;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
 
             var updates = from u in db.News select u;
